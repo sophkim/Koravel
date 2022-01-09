@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 메인 페이지 -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <title>Koravel</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 상단바 -->
+    <header>
+      <a href="index.html" class="brand">Koravel</a>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="explore.html">Explore</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <!-- 배경 비디오 -->
+        <video class="video-slide active" src="image/1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="image/2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="image/3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="image/4.mp4" autoplay muted loop></video>
+        
+
+        <!-- 1번째 비디오 설명 -->
+      <div class="content active">
+        <h1>Wonderful.<br /><span>Gangneung</span></h1>
+        <p>
+          Gangneung is a coast close to Seoul. In Gangneung City, you can enjoy the vast sea and there are many famous restaurants. There is the Taebaeksan Mountain Range to the west and the east coast to the east, and there are various attractions such as Gyeongpodae Overlook, Ojukheon Overlook, and Jeongdongjin Station. Come to Gangneung and enjoy nature and food!
+        </p>
+        <a target="_blank" href="https://www.gn.go.kr/tour/index.do">Read More</a>
+      </div>
+
+      <!-- 2번째 비디오 설명 -->
+      <div class="content">
+        <h1>Urban.<br /><span>Seoul</span></h1>
+        <p>
+          Seoul is the capital and largest city of Korea. Seoul is home to 20% of the Korean population and is surrounded by many mountains. In Seoul, you can enjoy nature, adventure, and downtown, and it is a place full of high-rise buildings and a place where traditional cities coexist. Come to Seoul and enjoy the feeling of Korea.
+        </p>
+        <a target="_blank" href="https://korean.visitseoul.net/index">Read More</a>
+      </div>
+
+      <!-- 3번째 비디오 설명 -->
+      <div class="content">
+        <h1>Feel nature.<br /><span>Suncheon</span></h1>
+        <p>
+          Suncheon is located in Jeollanam-do, Korea. Suncheon is the best place to enjoy nature. In addition, there are many historical sites. There is a representative tourist destination called Suncheonman Bay, where you can experience vast reed fields. There are also traditional Nakan Eupseong Folk Village and Namjegol Mural Village. If you want a vacation and folk experience, come to Suncheon.
+        </p>
+        <a target="_blank" href="https://www.suncheon.go.kr/tour/">Read More</a>
+      </div>
+
+      <!-- 4번째 비디오 설명 -->
+      <div class="content">
+        <h1>Attractive.<br /><span>Busan.</span></h1>
+        <p>
+          Busan is a coastal city in the southern part of Korea. It is Korea's second capital and largest marine logistics city, and is a place where you can enjoy a combination of nature and cities. If you go to Haeundae Beach, you can enjoy the vast sea and high-rise buildings at the same time. You can see the wonderful natural scenery of Busan at Haedong Yonggungsa Temple and Gamcheon Culture Village, and you can fully enjoy the sea at Jagalchi Market and Gwangalli Beach.
+        </p>
+        <a target="_blank" href="https://www.visitbusan.net/kr/index.do">Read More</a>
+      </div>
+
+      <!-- SNS 아이콘 -->
+      <div class="media-icons">
+        <a target="_blank" href="https://ko-kr.facebook.com/hangukgwangwang/"><i class="fab fa-facebook-square"></i></i></a>
+        <a target="_blank" href="https://www.instagram.com/kto9suk9suk/?hl=ko"><i class="fab fa-instagram"></i></a>
+        <a target="_blank" href="https://twitter.com/Kor_Visitkorea"><i class="fab fa-twitter"></i></a>
+        <a target="_blank" href="https://www.youtube.com/ibuzzkorea"><i class="fab fa-youtube"></i></a>
+      </div>
+
+      <!-- 비디오 버튼 -->
+      <div class="slider-navigation">
+          <div class="nav-btn active"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <!-- 비디오 버튼 누를 시 전환하는 자바스크립트 코드 -->
+    <script type="text/javascript">
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active")
+            })
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active")
+            })
+
+            contents.forEach((content) => {
+                content.classList.remove("active")
+            })
+
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+
+        }
+
+        btns.forEach((btn, i)=>{
+            btn.addEventListener("click",()=> {
+                sliderNav(i);
+            })
+        })
+    </script>
+  </body>
+</html>
